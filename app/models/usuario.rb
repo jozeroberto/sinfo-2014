@@ -7,4 +7,13 @@ class Usuario < ActiveRecord::Base
                   :palestras, 
                   :senha, 
                   :telefone
+				  :confirma_senha
+				  
+				def valida_senha
+					if self.senha == self.confirma_senha
+						return true
+					else
+						return false
+					end
+				end
 end
